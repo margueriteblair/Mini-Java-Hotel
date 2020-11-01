@@ -8,20 +8,22 @@ public class Hotel {
     private List<Integer> availableRooms;
     private List<Integer> unavailableRooms;
 
-    public Hotel(String name, List<Integer> availableRooms, List<Integer> unavailableRooms) {
+    public Hotel(String name) {
         this.name = name;
-        this.availableRooms= availableRooms;
-        this.unavailableRooms = unavailableRooms;
+        this.availableRooms = new ArrayList<>();
+        this.unavailableRooms = new ArrayList<>();
     }
 
     public void bookRoom(int room) {
-        unavailableRooms.add(room);
         availableRooms.remove(room);
+        unavailableRooms.add(room);
+        System.out.println("Thank you for booking room " + room);
     }
 
     public void unbookRoom(int room) {
         availableRooms.add(room);
         unavailableRooms.remove(room);
+        System.out.println("Thank you for staying! See you next time.");
     }
 
     public String getName() {
@@ -38,6 +40,14 @@ public class Hotel {
         System.out.println("Which of the following rooms are you checking out of:");
         System.out.println(unavailableRooms);
         return unavailableRooms;
+    }
+
+    public void setAvailableRooms(List newAvailableRooms) {
+        availableRooms = newAvailableRooms;
+    }
+
+    public void setUnavailableRooms(List newUnavailableRooms) {
+        unavailableRooms = newUnavailableRooms;
     }
 
 }

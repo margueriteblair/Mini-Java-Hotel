@@ -12,8 +12,12 @@ public class CliLogic {
         int choiceToken = scan.nextInt();
         if (choiceToken == 1) {
             hotel.getAvailableRooms();
+            int roomChoice = scan.nextInt();
+            hotel.bookRoom(roomChoice);
         } else if (choiceToken == 2) {
             hotel.getUnavailableRooms();
+            int roomChoice = scan.nextInt();
+            hotel.unbookRoom(roomChoice);
         } else {
             System.out.println("Invalid number option, please try again.");
         }
