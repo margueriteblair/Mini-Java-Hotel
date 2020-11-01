@@ -5,13 +5,14 @@ import java.util.ArrayList;
 
 public class Hotel {
     private String name;
-    private List<Integer> availableRooms;
-    private List<Integer> unavailableRooms;
+    private List<Integer> availableRooms = new ArrayList<>();
+    private List<Integer> unavailableRooms = new ArrayList<>();
 
-    public Hotel(String name) {
+    public Hotel(String name, Integer... rooms) {
         this.name = name;
-        this.availableRooms = new ArrayList<>();
-        this.unavailableRooms = new ArrayList<>();
+        for (int room : rooms) {
+            availableRooms.add(room);
+        }
     }
 
     public void bookRoom(int room) {
