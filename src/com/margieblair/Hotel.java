@@ -23,4 +23,21 @@ public class Hotel {
         availableRooms.add(room);
         unavailableRooms.remove(room);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Integer> getAvailableRooms() {
+        System.out.println("Please choose from one of the following rooms:");
+        System.out.println(availableRooms);
+        return availableRooms;
+    }
+
+    public List<Integer> getUnavailableRooms() {
+        System.out.println("Which of the following rooms are you checking out of:");
+        System.out.println(unavailableRooms);
+        return unavailableRooms;
+    }
+
 }

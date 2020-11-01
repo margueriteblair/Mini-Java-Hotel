@@ -9,6 +9,8 @@ public class Main {
         List availableRooms = List.of(101, 102, 103, 201, 202, 203);
         List unavailableRooms = List.of();
         Hotel newHotel = new Hotel("Baby Hotel", availableRooms, unavailableRooms);
-        System.out.println(availableRooms);
+
+
+        CliLogic.runProgram(newHotel);
     }
 }
