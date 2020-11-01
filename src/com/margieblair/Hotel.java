@@ -15,10 +15,12 @@ public class Hotel {
     }
 
     public void bookRoom(int room) {
-
+        unavailableRooms.add(room);
+        availableRooms.remove(room);
     }
 
     public void unbookRoom(int room) {
-
+        availableRooms.add(room);
+        unavailableRooms.remove(room);
     }
 }
