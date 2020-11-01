@@ -5,10 +5,20 @@ import java.util.ArrayList;
 
 public class Hotel {
     private String name;
-    private List<Integer> rooms;
+    private List<Integer> availableRooms;
+    private List<Integer> unavailableRooms;
 
-    public Hotel(String name, List<Integer> rooms) {
+    public Hotel(String name, List<Integer> availableRooms, List<Integer> unavailableRooms) {
         this.name = name;
-        this.rooms = rooms;
+        this.availableRooms= availableRooms;
+        this.unavailableRooms = unavailableRooms;
+    }
+
+    public void bookRoom(int room) {
+
+    }
+
+    public void unbookRoom(int room) {
+
     }
 }
