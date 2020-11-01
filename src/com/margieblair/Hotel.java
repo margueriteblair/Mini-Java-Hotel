@@ -16,14 +16,17 @@ public class Hotel {
     }
 
     public void bookRoom(int room) {
-        availableRooms.remove(room);
-        unavailableRooms.add(room);
+//        availableRooms.remove(room);
+//        unavailableRooms.add(room);
+        unavailableRooms.add(unavailableRooms.size(), room);
+        availableRooms.remove(availableRooms.indexOf(room));
         System.out.println("Thank you for booking room " + room);
     }
 
     public void unbookRoom(int room) {
-        availableRooms.add(room);
-        unavailableRooms.remove(room);
+        //simply inserts the room into the back of all the rooms
+        availableRooms.add(availableRooms.size(), room);
+        unavailableRooms.remove(unavailableRooms.indexOf(room));
         System.out.println("Thank you for staying! See you next time.");
     }
 
