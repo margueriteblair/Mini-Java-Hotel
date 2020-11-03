@@ -2,6 +2,7 @@ package com.margieblair;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class Hotel {
     private String name;
@@ -18,6 +19,8 @@ public class Hotel {
     public void bookRoom(int room) {
         unavailableRooms.add(unavailableRooms.size(), room);
         availableRooms.remove(availableRooms.indexOf(room));
+        availableRooms = availableRooms.stream().sorted().collect(Collectors.toList());
+        unavailableRooms = unavailableRooms.stream().sorted().collect(Collectors.toList());
         System.out.println("Thank you for booking room " + room);
     }
 
@@ -25,6 +28,8 @@ public class Hotel {
         //simply inserts the room into the back of all the rooms
         availableRooms.add(availableRooms.size(), room);
         unavailableRooms.remove(unavailableRooms.indexOf(room));
+        unavailableRooms = unavailableRooms.stream().sorted().collect(Collectors.toList());
+        availableRooms = availableRooms.stream().sorted().collect(Collectors.toList());
         System.out.println("Thank you for staying! See you next time.");
     }
 
