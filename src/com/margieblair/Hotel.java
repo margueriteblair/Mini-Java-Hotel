@@ -49,12 +49,5 @@ public class Hotel {
         return unavailableRooms;
     }
 
-    public void setAvailableRooms(List newAvailableRooms) {
-        availableRooms = newAvailableRooms;
-    }
-
-    public void setUnavailableRooms(List newUnavailableRooms) {
-        unavailableRooms = newUnavailableRooms;
-    }
 
 }
